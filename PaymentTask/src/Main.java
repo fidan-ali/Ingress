@@ -14,7 +14,7 @@ public class Main {
             } else if (name.equalsIgnoreCase("payy")) {
                 payment = new PayY();
             } else if (name.equalsIgnoreCase("payz")) {
-                payment = new PayY();
+                payment = new PayZ();
             } else {
                 payment = new PaymentMethod();
             }
