@@ -2,16 +2,14 @@ public class Main {
     public static void main(String[] args) {
 
         try {
-            // 1) SavingsAccount
             SavingsAccount sa = new SavingsAccount(100, "Fidan", 1000);
 
-            sa.withdraw(1200); // Exception
+            sa.withdraw(1200);
         } catch (InsufficientBalanceException e) {
             System.out.println("SavingsAccount Error: " + e.getMessage());
         }
 
         try {
-            // 2) CurrentAccount
             CurrentAccount ca = new CurrentAccount(200, "Ali", 1000);
 
             ca.withdraw(1300);
@@ -22,7 +20,6 @@ public class Main {
             System.out.println("CurrentAccount Error: " + e.getMessage());
         }
 
-        // Integer Cache Task
         Integer a = 100;
         Integer b = 100;
 
