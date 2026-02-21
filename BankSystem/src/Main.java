@@ -1,7 +1,28 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
-    public static void main(String[] args) throws InsufficientBalanceException {
+    public static void main(String[] args) {
+
+        try {
+            // 1) SavingsAccount
+            SavingsAccount sa = new SavingsAccount(100, "Fidan", 1000);
+
+            sa.withdraw(1200); // Exception
+        } catch (InsufficientBalanceException e) {
+            System.out.println("SavingsAccount Error: " + e.getMessage());
+        }
+
+        try {
+            // 2) CurrentAccount
+            CurrentAccount ca = new CurrentAccount(200, "Ali", 1000);
+
+            ca.withdraw(1300);
+            System.out.println("Balance after 1300 withdraw: " + ca.getBalance());
+
+            ca.withdraw(600); // Exception
+        } catch (InsufficientBalanceException e) {
+            System.out.println("CurrentAccount Error: " + e.getMessage());
+        }
+
+        // Integer Cache Task
         Integer a = 100;
         Integer b = 100;
 
@@ -13,13 +34,5 @@ public class Main {
 
         System.out.println(x == y);
         System.out.println(x.equals(y));
-
-        SavingsAccount account1 = new SavingsAccount(1000, "Laman", 1);
-        account1.withdraw(1200);
-
-        CurrentAccount account = new CurrentAccount(1000, "Fidan", 2);
-        account.withdraw(1300);
-        account.withdraw(600);
-
     }
 }

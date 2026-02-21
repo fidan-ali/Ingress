@@ -1,20 +1,21 @@
 public abstract class BankAccount {
+
+    private Integer accountNumber;
+    private String ownerName;
+    protected double balance;
+
     public BankAccount(Integer accountNumber, String ownerName, double balance) {
         this.accountNumber = accountNumber;
         this.ownerName = ownerName;
         this.balance = balance;
     }
 
-    private Integer accountNumber;
-    private String ownerName;
-    protected double balance;
+    public abstract void deposit(double amount);
 
-    public void setAccountNumber(Integer accountNumber) {
-        this.accountNumber = accountNumber;
-    }
+    public abstract void withdraw(double amount) throws InsufficientBalanceException;
 
-    public void setOwnerName(String ownerName) {
-        this.ownerName = ownerName;
+    public double getBalance() {
+        return balance;
     }
 
     public Integer getAccountNumber() {
@@ -25,10 +26,24 @@ public abstract class BankAccount {
         return ownerName;
     }
 
+    @Override
+    public String toString() {
+        return "AccountNumber: " + accountNumber +
+                ", Owner: " + ownerName +
+                ", Balance: " + balance;
+    }
 
-    public abstract void deposit(double amount);
-    public abstract void withdraw(double amount) throws InsufficientBalanceException; //throws InsufficientBalanceException
-    public double getBalance(){
-        return balance;
-    };
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (!(obj instanceof BankAccount)) return false;
+
+        BankAccount other = (BankAccount) obj;
+        return accountNumber.equals(other.accountNumber);
+    }
+
+    @Override
+    public int hashCode() {
+        return accountNumber.hashCode();
+    }
 }
