@@ -1,5 +1,7 @@
 package task1;
 
+import java.util.Objects;
+
 public class Student {
     int id;
     String name;
@@ -36,6 +38,11 @@ public class Student {
         if (obj == null || getClass() != obj.getClass()) return false;
         Student other = (Student) obj;
         return this.id == other.id;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hashCode(id);
     }
 
     @Override
