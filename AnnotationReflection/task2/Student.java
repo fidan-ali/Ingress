@@ -9,4 +9,10 @@ public class Student {
     @Required
     private String email;
 
+
+    public Student(String name, int age, String email) {
+        this.name = name;
+        this.age = age;
+        this.email = email;
+    }
 }
