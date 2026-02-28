@@ -11,26 +11,9 @@ public class Main2 {
         System.out.println(car2);
         System.out.println(car3);
 
-        if(car1.equals(car2)){
-            System.out.println("Bu maşın artıq mövcuddur.");
-        }
-        else{
-            System.out.println("Yeni maşın əlavə oluna bilər.");
-        }
-
-        if(car1.equals(car3)){
-            System.out.println("Bu maşın artıq mövcuddur.");
-        }
-        else{
-            System.out.println("Yeni maşın əlavə oluna bilər.");
-        }
-
-        if(car2.equals(car3)){
-            System.out.println("Bu maşın artıq mövcuddur.");
-        }
-        else{
-            System.out.println("Yeni maşın əlavə oluna bilər.");
-        }
+        System.out.println("\ncar1 == car2 ? " + car1.equals(car2));
+        System.out.println("car1 == car3 ? " + car1.equals(car3));
+        System.out.println("car2 == car3 ? " + car2.equals(car3));
 
     }
 }
