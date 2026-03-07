@@ -1,3 +1,5 @@
+package Task1;
+
 public class User {
     private String name;
     @MinValue(18)
