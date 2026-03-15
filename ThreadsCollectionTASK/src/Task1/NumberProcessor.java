@@ -15,5 +15,6 @@ public class NumberProcessor implements Runnable{
         for(int number : numbers){
             sum+=number;
         }
+        System.out.println(Thread.currentThread().getName() + " sum: " + sum);
     }
 }
