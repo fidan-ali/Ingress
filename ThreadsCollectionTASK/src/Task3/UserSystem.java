@@ -7,11 +7,11 @@ public class UserSystem {
     Set<String> users = new HashSet<>();
     public void registerUser(String username){
         if(users.contains(username)){
-            System.out.println("User already exists.");
+            System.out.println("Username already exists.");
         }
         else{
             users.add(username);
-            System.out.println("User added.");
+            System.out.println("User registered.");
         }
     }
 }
