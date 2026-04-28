@@ -2,7 +2,7 @@ package org.example.customerservice.mapper;
 
 import org.example.customerservice.dto.CustomerRequest;
 import org.example.customerservice.dto.CustomerResponse;
-import org.example.customerservice.entity.CustomerEntity;
+import org.example.customerservice.dao.entity.CustomerEntity;
 
 public class CustomerMapper {
     public static CustomerEntity mapToEntity(CustomerRequest request){

@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: CustomerService
+  datasource:
+    type: com.zaxxer.hikari.HikariDataSource
+    url: jdbc:mysql://localhost:3306/customerdb
+    username: root
+    password: 1234
+
+server:
+  port: 8080
+
+
+
