@@ -3,6 +3,7 @@ package org.example.accountmanagement.controller;
 import lombok.AccessLevel;
 import lombok.RequiredArgsConstructor;
 import lombok.experimental.FieldDefaults;
+import org.example.accountmanagement.dao.entity.Customer;
 import org.example.accountmanagement.model.CustomerDto;
 import org.example.accountmanagement.service.CustomerService;
 import org.springframework.http.HttpStatus;
@@ -38,9 +39,15 @@ public class CustomerController {
         customerService.update(customerDto);
     }
 
+
     @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void deleteById(@PathVariable Long id){
         customerService.deleteById(id);
+    }
+
+    @GetMapping("/high-balance")
+    public List<Customer> getCustomersWithHighBalance(@RequestParam Double minBalance) {
+        return customerService.getCustomersWithHighBalance(minBalance);
     }
 }

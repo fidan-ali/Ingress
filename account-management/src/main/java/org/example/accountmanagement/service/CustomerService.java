@@ -45,4 +45,8 @@ public class CustomerService {
     public void deleteById(Long id){
         customerRepository.deleteById(id);
     }
+
+    public List<Customer> getCustomersWithHighBalance(Double minBalance) {
+        return customerRepository.findCustomersWithBalanceGreaterThan(minBalance);
+    }
 }

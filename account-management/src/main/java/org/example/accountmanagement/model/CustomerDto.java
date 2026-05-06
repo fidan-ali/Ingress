@@ -8,7 +8,6 @@ import lombok.experimental.FieldDefaults;
 @FieldDefaults(level = AccessLevel.PRIVATE, makeFinal = true)
 public class CustomerDto {
     Long id;
+    private String pin;
     private String name;
-    private String email;
-    private String surname;
 }

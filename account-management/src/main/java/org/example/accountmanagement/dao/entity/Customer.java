@@ -19,12 +19,10 @@ public class Customer {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
 
-    @Column(nullable = false)
-    private String name;
-
     @Column(nullable = false, unique = true)
-    private String email;
-    private String surname;
+    private String pin;
+
+    private String name;
 
     @OneToMany(mappedBy = "customer", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Account> accounts = new ArrayList<>();
