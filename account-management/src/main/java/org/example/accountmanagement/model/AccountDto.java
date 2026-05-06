@@ -8,6 +8,7 @@ import lombok.experimental.FieldDefaults;
 @FieldDefaults(level = AccessLevel.PRIVATE, makeFinal = true)
 public class AccountDto {
     Long id;
-    private String username;
-    private String password;
+    private String accountNumber;
+    private Double balance;
+
 }

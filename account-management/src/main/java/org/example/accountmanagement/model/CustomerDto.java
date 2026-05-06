@@ -9,5 +9,6 @@ import lombok.experimental.FieldDefaults;
 public class CustomerDto {
     Long id;
     private String name;
+    private String email;
     private String surname;
 }
